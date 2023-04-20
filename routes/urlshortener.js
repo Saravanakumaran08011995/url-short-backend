@@ -20,13 +20,15 @@ router.post("/create",async(req,res)=>{
         const newData = await new urlShortenerModel({
             longUrl:req.body.longUrl,
             shortenedUrl:generateUrl()
-        }).save()
-        res.send(newData)
+        }).save();
+        res.set('Content-Type', 'application/json');
+        res.send(newData);
     } catch (error) {
         console.log(error)
         res.status(500).send("Internal Server Error")
     }
 })
+
 
 router.delete("/delete/:id",async(req,res)=>{
     try {

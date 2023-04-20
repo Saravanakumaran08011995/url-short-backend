@@ -41,4 +41,5 @@ app.use("/signup",signupRouter)
 app.use("/login",loginRouter)
 
 
-app.listen(process.env.PORT)
+// app.listen(process.env.PORT)
+app.listen(process.env.PORT,console.log(`server is up and running at ${process.env.PORT}`))
